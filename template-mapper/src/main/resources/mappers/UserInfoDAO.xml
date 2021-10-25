@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.natsu.template.dao.UserInfoDAO">
+
+    <sql id="selectUserInfo">
+        SELECT id,
+               phone,
+               name,
+               token,
+               ticket_name,
+               cookie,
+               device_id,
+               region,
+               remark,
+               type,
+               status,
+               create_time,
+               update_time
+        FROM user_info
+    </sql>
+
+    <select id="getUserInfoById" resultType="com.natsu.template.model.UserInfoDO">
+        <include refid="selectUserInfo"/>
+        WHERE status = 1 AND id = #{id}
+    </select>
+</mapper>
