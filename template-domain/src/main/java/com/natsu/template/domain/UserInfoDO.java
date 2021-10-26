@@ -1,4 +1,4 @@
-package com.natsu.template.model;
+package com.natsu.template.domain;
 
 import java.time.LocalDateTime;
 

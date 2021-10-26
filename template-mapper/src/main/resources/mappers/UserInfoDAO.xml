@@ -5,21 +5,11 @@
     <sql id="selectUserInfo">
         SELECT id,
                phone,
-               name,
-               token,
-               ticket_name,
-               cookie,
-               device_id,
-               region,
-               remark,
-               type,
-               status,
-               create_time,
-               update_time
+               name
         FROM user_info
     </sql>
 
-    <select id="getUserInfoById" resultType="com.natsu.template.model.UserInfoDO">
+    <select id="getUserInfoById" resultType="com.natsu.template.domain.UserInfoDO">
         <include refid="selectUserInfo"/>
         WHERE status = 1 AND id = #{id}
     </select>
